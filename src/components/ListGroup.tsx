@@ -4,6 +4,7 @@ interface props {
   items: string[];
   heading: string;
   onSelectItem: (item: string) => void;
+  
 }
 
 function ListGroup({ items, heading, onSelectItem }: props) {
