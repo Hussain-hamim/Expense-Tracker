@@ -1,24 +1,24 @@
+import { useState } from "react";
 import "./App.css";
 import Alert from "./components/Alert";
-import ListGroup from "./components/ListGroup";
+import Button from "./components/Button";
 
 function App() {
-  const items = ["Khost", "Kabul", "Herat", "Kandahar", "Ghazni"];
+  const [isShow, setIsShow] = useState(false);
 
-  function handleSelectItem(item: string) {
-    console.log(item);
+  function handleClick() {
+    setIsShow(!isShow);
   }
 
   return (
     <>
-      <ListGroup
-        items={items}
-        heading="Cities"
-        onSelectItem={handleSelectItem}
-      />
-      <Alert>
-        Hello <b>World</b>
-      </Alert>
+      {isShow && (
+        <Alert onClose={() => setIsShow(false)}>
+          This alert will be shown here
+        </Alert>
+      )}
+
+      <Button handleClick={handleClick}>My Button</Button>
     </>
   );
 }
