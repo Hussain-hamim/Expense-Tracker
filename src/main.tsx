@@ -6,6 +6,6 @@ import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App onClick={() => console.log("clicked me")} />
+    <App />
   </React.StrictMode>
 );
