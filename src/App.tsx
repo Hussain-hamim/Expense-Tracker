@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       {tag.map((t) => (
-        <p>{t}</p>
+        <h1>{t}</h1>
       ))}
 
       <button className="btn btn-primary" type="button" onClick={handleClick}>
