@@ -4,10 +4,12 @@ interface props {
 }
 
 function Button({ handleClick, children }: props) {
-  return (
+  return (<>
     <button onClick={handleClick} className="btn btn-primary" type="button">
       {children}
     </button>
+
+</>
   );
 }
 
