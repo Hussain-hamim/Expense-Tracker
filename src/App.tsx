@@ -1,24 +1,23 @@
 import { useState } from "react";
 
 function App() {
-  const [customer, setCustomer] = useState({
-    name: "Hussain",
-    address: {
-      city: "khost",
-      zip: 1025,
-    },
-  });
+  const [tag, setTag] = useState(["happy", "boy"]);
 
   function handleClick() {
-    setCustomer({
-      ...customer,
-      address: { ...customer.address, city: "kabul" },
-    });
+    //add
+    setTag([...tag, "allhamdullah"]);
+    //remove
+    setTag(tag.filter((t) => t !== "boy"));
+    //update
+    setTag(tag.map((t) => (t === "happy" ? "Pleasant" : t)));
   }
 
   return (
     <>
-      {customer.address.city}
+      {tag.map((t) => (
+        <p>{t}</p>
+      ))}
+
       <button className="btn btn-primary" type="button" onClick={handleClick}>
         Click Me
       </button>
