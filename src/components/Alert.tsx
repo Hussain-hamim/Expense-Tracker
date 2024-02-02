@@ -1,6 +1,6 @@
 interface props {
-  onClose: () => void;
   children: string;
+  onClose: () => void;
 }
 
 const Alert = ({ onClose, children }: props) => {
