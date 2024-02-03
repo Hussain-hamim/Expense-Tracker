@@ -8,12 +8,12 @@ interface props {
 const ExpandableText = ({ children, maxChar = 100 }: props) => {
   const [show, setShow] = useState(false);
 
-  // if (children.length <= maxChar) return <p>{children}</p>;
+  if (children.length <= maxChar) return <p>{children}</p>;
 
   const text = show ? children : children.substring(0, maxChar) + "...";
 
   return (
-    <p>
+    <p className="border border-3px" >
       {text}
       <button
       style={{height: "25px", padding: 0, width: "50px"}}
