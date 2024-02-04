@@ -1,4 +1,5 @@
 import Form from "./components/Form";
+// import Form2 from "./components/Form2";
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
   return (
     <>
       <Form />
+      {/* <Form2 /> */}
     </>
   );
 }
