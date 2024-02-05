@@ -9,7 +9,7 @@ const Form = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<formData>();
 
   const onSubmit = (data: FieldValues) => console.log(data);
@@ -39,13 +39,19 @@ const Form = () => {
         <div className="mb-3">
           <label htmlFor="age" className="form-label"></label>
           <input
-            {...register("age")}
             id="age"
             type="number"
             className="form-control"
+            {...register("age", { required: true, min: 18 })}
           />
+          {errors.age?.type === "min" && (
+            <p className="text-danger">The age must be at lest 18.</p>
+          )}
+          {errors.age?.type === "required" && (
+            <p className="text-danger">The age field is required.</p>
+          )}
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button disabled={!isValid} type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>
