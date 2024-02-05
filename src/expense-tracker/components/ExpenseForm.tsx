@@ -1,22 +1,35 @@
+import { categories } from "../../App";
+
 const ExpenseForm = () => {
   return (
-    <div>
-      <form className="form-control">
-        <label>Description</label>
-        <input type="text" />
-
-        <label>Amount</label>
-        <input type="text" />
-
-        <label>Category</label>
-        <select name="category">
+    <form>
+      <div className="mb-3">
+        <label htmlFor="description" className="form-label">
+          Description
+        </label>
+        <input id="description" type="text" className="form-control" />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="amount" className="form-label">
+          Amount
+        </label>
+        <input id="amount" type="number" className="form-control" />
+      </div>
+      <div className="mb-3">
+        <label className="form-label" htmlFor="category">
+          Category
+        </label>
+        <select id="category" className="form-select">
           <option value=""></option>
-          <option value="food">food</option>
-          <option value="fruit">fruit</option>
-          <option value="candy">candy</option>
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
         </select>
-      </form>
-    </div>
+      </div>
+      <button className="btn btn-primary">Submit</button>
+    </form>
   );
 };
 
