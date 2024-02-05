@@ -3,14 +3,20 @@ import ExpenseList from "./expense-tracker/components/ExpenseList";
 import ExpenseFilter from "./expense-tracker/components/ExpenseFilter";
 import ExpenseForm from "./expense-tracker/components/ExpenseForm";
 
-export const categories = ["Groceries", "Utilities", "Entertainment"];
-
 function App() {
   const [expenses, setExpenses] = useState([
-    { id: 1, discription: "aaaa", amount: 10, category: "Groceries" },
-    { id: 2, discription: "bbbb", amount: 10, category: "Utilities" },
-    { id: 3, discription: "ccc", amount: 10, category: "Utilities" },
-    { id: 4, discription: "dddd", amount: 10, category: "Entertainment" },
+    {
+      id: 1,
+      description: "Meet Hussain",
+      amount: 10,
+      category: "Entertainment",
+    },
+    {
+      id: 2,
+      description: "Buy new laptop",
+      amount: 600,
+      category: "Utilities",
+    },
   ]);
   const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -22,7 +28,11 @@ function App() {
     <>
       <h1 style={{ textAlign: "center" }}>Expense Tracker</h1>
       <div className="mb-5">
-        <ExpenseForm />
+        <ExpenseForm
+          onSubmit={(expense) =>
+            setExpenses([...expenses, { ...expense, id: expenses.length + 1 }])
+          }
+        />
       </div>
 
       <ExpenseFilter
@@ -32,6 +42,7 @@ function App() {
         expenses={visibleExpenses}
         onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
       />
+      <div className="footer"></div>
     </>
   );
 }

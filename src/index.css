@@ -70,3 +70,6 @@ button:focus-visible {
 body {
   padding: 20px;
 }
+.delete {
+  text-align: center;
+}

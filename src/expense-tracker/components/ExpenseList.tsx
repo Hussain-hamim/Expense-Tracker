@@ -1,6 +1,6 @@
 interface Expense {
   id: number;
-  discription: string;
+  description: string;
   amount: number;
   category: string;
 }
@@ -17,7 +17,7 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
     <table className="table table-bordered">
       <thead>
         <tr>
-          <th>Discription</th>
+          <th>description</th>
           <th>Amount</th>
           <th>Category</th>
           <th></th>
@@ -26,12 +26,12 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
       <tbody>
         {expenses.map((expense) => (
           <tr key={expense.id}>
-            <td>{expense.discription}</td>
+            <td>{expense.description}</td>
             <td>{expense.amount}</td>
             <td>{expense.category}</td>
-            <td>
+            <td className="delete">
               <button
-                className="btn btn-outline-danger"
+                className="btn btn-outline-danger "
                 onClick={() => onDelete(expense.id)}
               >
                 Delete
