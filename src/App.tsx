@@ -2,6 +2,7 @@ import { useState } from "react";
 import ExpenseList from "./expense-tracker/components/ExpenseList";
 import ExpenseFilter from "./expense-tracker/components/ExpenseFilter";
 import ExpenseForm from "./expense-tracker/components/ExpenseForm";
+import { AiOutlineCopyright } from "react-icons/ai";
 
 function App() {
   const [expenses, setExpenses] = useState([
@@ -42,7 +43,12 @@ function App() {
         expenses={visibleExpenses}
         onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
       />
-      <div className="footer"></div>
+      <footer className="footer">
+        <div className="text-center opacity-50">
+          <AiOutlineCopyright />
+          <span className="m-1">Hussain Hamim</span>
+        </div>
+      </footer>
     </>
   );
 }
