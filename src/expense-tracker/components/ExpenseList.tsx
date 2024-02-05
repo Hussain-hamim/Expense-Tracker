@@ -28,7 +28,7 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
           <tr key={expense.id}>
             <td>{expense.description}</td>
             <td>{expense.amount}</td>
-            <td>{expense.category}</td>
+            <td className="overflow-wrap-break-word">{expense.category}</td>
             <td>
               <button
                 className="btn btn-outline-danger btn-sm"

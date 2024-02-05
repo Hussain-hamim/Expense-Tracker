@@ -10,11 +10,11 @@ function App() {
       id: 1,
       description: "Meet Hussain",
       amount: 10,
-      category: "Entertainment",
+      category: "Hobbies",
     },
     {
       id: 2,
-      description: "Buy new laptop",
+      description: "Buy new a laptop",
       amount: 600,
       category: "Utilities",
     },
